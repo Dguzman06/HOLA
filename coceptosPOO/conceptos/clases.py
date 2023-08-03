@@ -1,12 +1,29 @@
 import random
 
 
+class materia:
+
+    def __init__(self,nombre: str,creditos: int):
+    self.nombre:str = nombre
+    self.creditos: int = creditos
+
+
+
+
+
+
 class Estudiante:
 
     def __init__(self,nombre: str,edad: int,nota_prom: float):
         self.nombre: str = nombre
         self.edad:int = edad
         self.nota_prom:float = nota_prom
+        self.materia: list[materia] = []
+
+        def matricular_materia(self, nombre_materia: str, creditos: int):
+            materia:materia = materia(nombre_materia, creditos)
+            self.materias.append(materia)
+
 
     def cambiar_nota(self) -> float:
         n = random.randint(1, 10)
@@ -42,6 +59,12 @@ if __name__ == "__main__":
     print(e3.nota_prom)
     e3.cambiar_nota()
     print(e3.nota_prom)
+
+    e1.matricular_materia("apoo", 3)
+    e1.matricular_materia("procesos de negocios", 3)
+
+    print(len(e1.materias))
+     print(e1.materia[1].nombre)
 
 
 
